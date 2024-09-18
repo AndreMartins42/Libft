@@ -1,16 +1,31 @@
-## Hi there 👋
+<h1 align="center">README.md</h1>
 
-<!--
-**AndreMartins42/AndreMartins42** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+###
 
-Here are some ideas to get you started:
+<h6 align="center">Hi there, I'm André</h6>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+###
+
+<h2 align="left">About me!</h2>
+
+###
+
+<h6 align="left">Software Engineer Student at @42Porto</h6>
+
+###
+
+<p align="left"></p>
+
+###
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=linux" height="35" alt="linux logo"  />
+  <img width="20" />
+  <img src="https://skillicons.dev/icons?i=c" height="35" alt="c logo"  />
+  <img width="20" />
+  <img src="https://skillicons.dev/icons?i=vim" height="35" alt="vim logo"  />
+  <img width="20" />
+  <img src="https://skillicons.dev/icons?i=git" height="35" alt="git logo"  />
+</div>
+
+###
