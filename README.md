@@ -2,7 +2,7 @@
 
 ###
 
-<h6 align="center">Hi there, I'm André</h6>
+<h5 align="center">Hi there, I'm André Martins</h5>
 
 ###
 
@@ -10,7 +10,7 @@
 
 ###
 
-<h6 align="left">Software Engineer Student at @42Porto</h6>
+<h5 align="left">Software Engineer Student at @42Porto</h5>
 
 ###
 
