@@ -6,35 +6,11 @@
 /*   By: anmendes <anmendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:33:59 by anmendes          #+#    #+#             */
-/*   Updated: 2024/10/28 10:40:21 by anmendes         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:02:14 by anmendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdlib.h>
-#include <stdio.h>
-
-int		count_words(char const *str, char c);
-char	*malloc_word(char const *str, char c);
-char	**ft_split(char const *s, char c);
-void	*ft_free(char **array, int len);
-
-/* int		main(void)
-{
-	char **array;
-	int  i;
-
- 	char *phrase = "andre luiz mendes martins";
- 	array = ft_split(phrase, ' ');
-	i = 0;
-	while (array[i] != NULL)
-	{
-		printf("%s\n", array[i]);
-		i++;
-	}
-
-} */
 
 int	count_words(char const *str, char c)
 {

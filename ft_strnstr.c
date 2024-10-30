@@ -6,13 +6,11 @@
 /*   By: anmendes <anmendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:32:25 by anmendes          #+#    #+#             */
-/*   Updated: 2024/10/28 14:29:11 by anmendes         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:06:15 by anmendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -35,14 +33,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/* int main (void)
-{ 
-    char *str;	
-	
-	if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 15)))
-        printf("NULL");
-    else
-       printf("%s\n", str);
-
-} */

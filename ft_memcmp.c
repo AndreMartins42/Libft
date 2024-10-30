@@ -6,7 +6,7 @@
 /*   By: anmendes <anmendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:57:53 by anmendes          #+#    #+#             */
-/*   Updated: 2024/10/28 11:04:48 by anmendes         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:28:45 by anmendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	a = (unsigned char *)s1;
 	b = (unsigned char *)s2;
-	if (a == NULL || b == NULL || n == 0)
-		return (0);
-	while (*a == *b && n--)
+	while (n && *a == *b)
 	{
-		a++;
-		b++;
+		++a;
+		++b;
+		--n;
 	}
 	if (n)
 		return (*a - *b);
 	return (0);
 }
-/* int main(void)
-{  
-	int atoi;
-	
-    atoi = ft_memcmp("abcdefghij", "abcdefgxyz", 7);
-    printf("\nft_memcmp: %i\n", atoi);
-    atoi = memcmp("abcdefghij", "abcdefgxyz", 7);
-    printf("   memcmp: %i\n", atoi);
-} */

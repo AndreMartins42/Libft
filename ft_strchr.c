@@ -6,7 +6,7 @@
 /*   By: anmendes <anmendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 12:12:39 by anmendes          #+#    #+#             */
-/*   Updated: 2024/10/28 14:54:47 by anmendes         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:10:04 by anmendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	cc;
+	char	temp;
 
-	cc = (char)c;
+	temp = (char)c;
 	while (*s)
 	{
-		if (*s == cc)
+		if (*s == temp)
 			return ((char *)s);
 		s++;
 	}
-	if (cc == '\0')
+	if (temp == '\0')
 		return ((char *)s);
 	return (NULL);
 }
-
-/* int main(void)
-{
-	char *res;
-
-	res = ft_strchr("teste", '\0');
-	printf("%p", res);
-} */

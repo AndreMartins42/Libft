@@ -6,7 +6,7 @@
 /*   By: anmendes <anmendes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:29:04 by anmendes          #+#    #+#             */
-/*   Updated: 2024/10/28 14:21:48 by anmendes         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:10:47 by anmendes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (s1[end] && ft_strchr(set, s1[end]))
 		end--;
-	newstr = ft_substr(s1, start, end - start + 1);
+	newstr = ft_substr(s1, start, (end - start) + 1);
 	return (newstr);
 }
