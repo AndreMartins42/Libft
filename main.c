@@ -245,5 +245,40 @@ int main(void)
 
 // -----------------------------------------------
 
-    return 0;
+
+    
+
+
+
+ // ft_lstnew
+	t_list *node1 = ft_lstnew("sou o primeiro - node1");
+	printf("ft_lstnew:       %s\n", (char *)node1->content);
+
+// ft_lstadd_front
+	t_list *node2 = ft_lstnew("sou o segundo - node2");
+	ft_lstadd_front(&node1, node2);
+	printf("ft_lstadd_front: %s\n", (char *)node1->content);
+
+// ft_lstadd_back
+	t_list *node3 = ft_lstnew("sou o terceiro - node3");
+	ft_lstadd_back(&node1, node3);
+	printf("ft_lstadd_back:  %s\n", (char *)ft_lstlast(node1)->content);
+
+//  ft_lstsize
+	int count = ft_lstsize(node1);
+	printf("ft_lstsize: somos %i nodes\n", count);
+
+// ft_lstlast
+	printf("ft_lstlast: %s\n", (char *)ft_lstlast(node1)->content);
+
+// ft_lstiter
+	void print_node(void *content)
+	{
+		printf("\ncontent = %s\n", (char *)content);
+	}
+	ft_lstiter(node1, print_node);
+
+
+
+
 }
