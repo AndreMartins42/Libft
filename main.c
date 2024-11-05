@@ -1,150 +1,249 @@
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+// -----------------------------------------------
 
 int main(void)
 {
-    char    *res;
-    char    *trim;
-    char    str[]  = "Bonjour comment ca va?";
-    char    strtrim[] = "cccccvoceaaaaa";
-    char    foundtrim[] = "ca";
-    char    str1[] = "1234567890";
-    char    str2[] = "1234567890";
-    char    str3[] = "1234567890";
-    char    str4[] = "1234567890";
-    char    teste2[5];
-    int     *ptr;
-    int     atoi;
-    int     a = 'a';
-    //char const *joinnew;
-    
-    //          ATOI
-    atoi = ft_atoi("-1234567890");
-    printf("\nft_atoi: %i\n", atoi);  
-    printf("   atoi: %i\n", atoi);  
+    // ft_atoi
+    printf("ft_atoi: %d | %d\n", ft_atoi("42"), atoi("42"));
 
-    //          BZERO            
-    ft_bzero(teste2, sizeof(teste2));
-    printf("\nft_bzero: %s\n", teste2);
-    bzero(teste2, sizeof(teste2));
-    printf("   bzero: %s\n", teste2);
+// -----------------------------------------------
 
-    //          CALLOC              
-    ptr = (int *)ft_calloc(5, sizeof(int));
-    printf("\nft_calloc: Memoria alocado: ");
-    for(int i = 0; i < 5; i++)
-        printf("%i, ", ptr[i]);
+    // ft_bzero
+    char bzero_test[5] = "abcd";
+    ft_bzero(bzero_test, 2);
+    printf("ft_bzero: %c %c %c\n", bzero_test[0], bzero_test[1], bzero_test[2]);
+
+// -----------------------------------------------
+
+    // ft_calloc
+    int *calloc_test = ft_calloc(2, sizeof(int));
+    printf("ft_calloc: %d %d\n", calloc_test[0], calloc_test[1]);
+    free(calloc_test);
+
+// -----------------------------------------------
+
+    // ft_isalnum
+    printf("ft_isalnum: %d | %d\n", ft_isalnum('a'), isalnum('a'));
+
+// -----------------------------------------------
+
+    // ft_isalpha
+    printf("ft_isalpha: %d | %d\n", ft_isalpha('A'), isalpha('A'));
+
+// -----------------------------------------------
+
+    // ft_isascii
+    printf("ft_isascii: %d | %d\n", ft_isascii(128), isascii(128));
+
+// -----------------------------------------------
+
+    // ft_isdigit
+    printf("ft_isdigit: %d | %d\n", ft_isdigit('5'), isdigit('5'));
+
+// -----------------------------------------------
+
+    // ft_isprint
+    printf("ft_isprint: %d | %d\n", ft_isprint(31), isprint(31));
+
+// -----------------------------------------------
+
+    // ft_itoa
+    printf("ft_itoa: %s\n", ft_itoa(42));
+
+// -----------------------------------------------
+
+    // ft_memchr
+    char memchr_test[] = "Hello";
+    printf("ft_memchr: %s | %s\n", (char *)ft_memchr(memchr_test, 'e', 5), (char *)memchr(memchr_test, 'e', 5));
+
+// -----------------------------------------------
+
+    // ft_memcmp
+    printf("ft_memcmp: %d | %d\n", ft_memcmp("abc", "abc", 3), memcmp("abc", "abc", 3));
+
+// -----------------------------------------------
+
+    // ft_memcpy
+    char memcpy_dest[6];
+    ft_memcpy(memcpy_dest, "Hello", 6);
+    printf("ft_memcpy: %s\n", memcpy_dest);
+
+// -----------------------------------------------
+
+    // ft_memmove
+    char memmove_test[] = "Hello";
+    ft_memmove(memmove_test + 2, memmove_test, 3);
+    printf("ft_memmove: %s\n", memmove_test);
+
+// -----------------------------------------------
+
+    // ft_memset
+    char memset_test[] = "Hello";
+    ft_memset(memset_test, 'a', 2);
+    printf("ft_memset: %s\n", memset_test);
+
+// -----------------------------------------------
+
+    // ft_putchar_fd
+    printf("ft_putchar_fd: ");
+    ft_putchar_fd('A', 1);
     printf("\n");
-    ptr = (int *)calloc(5, sizeof(int));
-    printf("   calloc: Memoria alocado: ");
-    for(int i = 0; i < 5; i++)
-        printf("%i, ", ptr[i]);
+
+// -----------------------------------------------
+
+    // ft_putendl_fd
+    printf("ft_putendl_fd: ");
+    ft_putendl_fd("Hello", 1);
+
+// -----------------------------------------------
+
+    // ft_putnbr_fd
+    printf("ft_putnbr_fd: ");
+    ft_putnbr_fd(42, 1);
     printf("\n");
 
-    //          ISALNUM
-    atoi = ft_isalnum(a);              
-    printf("\nft_isalnum: %i\n", atoi);
-    atoi = isalnum(a);
-    printf("   isalnum: %i\n", atoi);
+// -----------------------------------------------
 
-    //          ISAALPHA
-    atoi = ft_isalpha(a);              
-    printf("\nft_isalpha: %i\n", atoi);
-    atoi = isalpha(a);
-    printf("   isalpha: %i\n", atoi);
+    // ft_putstr_fd
+    printf("ft_putstr_fd: ");
+    ft_putstr_fd("Hello", 1);
+    printf("\n");
 
-    //          ISAASCII
-    atoi = ft_isascii(a);              
-    printf("\nft_isascii: %i\n", atoi);
-    atoi = isascii(a);
-    printf("   isascii: %i\n", atoi);
+// -----------------------------------------------
 
-    //          ISDIGIT
-    atoi = ft_isdigit(a);              
-    printf("\nft_isdigit: %i\n", atoi);
-    atoi = isdigit(a);
-    printf("   isdigit: %i\n", atoi);
+    // ft_split
+    char **split_result = ft_split("Hello World", ' ');
+    printf("ft_split: %s %s\n", split_result[0], split_result[1]);
+    free(split_result[0]);
+    free(split_result[1]);
+    free(split_result);
 
-    //          ISPRINT
-    atoi = ft_isprint(a);              
-    printf("\nft_isprint: %i\n", atoi);
-    atoi = isprint(a);
-    printf("   isprint: %i\n", atoi);
+// -----------------------------------------------
 
-    //          MEMCHR              
-    res = ft_memchr(str1, '5', strlen(str1));
-    printf("\nft_memchr: %s\n", res);
-    res = memchr(str1, '5', strlen(str1));
-    printf("   memchr: %s\n", res);
-     
-    //          MEMCMP              
-    atoi = ft_memcmp("abcdefghij", "abcdefgxyz", 7);
-    printf("\nft_memcmp: %i\n", atoi);
-    atoi = memcmp("abcdefghij", "abcdefgxyz", 7);
-    printf("   memcmp: %i\n", atoi);
+    // ft_strchr
+    printf("ft_strchr: %s | %s\n", ft_strchr("Hello", 'e'), strchr("Hello", 'e'));
 
-    //          MEMCPY            
- 	ft_memcpy(str1, str1, 9);
-	printf("\nft_memcpy: %s\n", str1);
-	memcpy(str2, str2, 9);
-	printf("   memcpy: %s\n", str2);
+// -----------------------------------------------
 
-    //          MEMMOVE           
-    ft_memmove(str3 + 2, str3, 4);
-   	printf("\nft_memmove: %s\n", str3);
-    memmove(str4 + 2, str4, 4);
-   	printf("   memmove: %s\n", str4); 
+    // ft_strdup
+    printf("ft_strdup: %s\n", ft_strdup("Hello"));
 
-    //          MEMSET              
-    res = ft_memset(teste2, 'a', 4);
-    printf("\nft_memset: %s\n", res);
-    res = memset(teste2, 'a', 4);
-    printf("   memset: %s\n", res);
+// -----------------------------------------------
 
-    //          STRCHR            
-    res = ft_strchr(str, '\0');
-    printf("\nft_substr: %s\n", res);
-    res = strchr(str, '\0');
-    printf("   substr: %s\n", res);
+    // ft_striteri
+    void sample_func(unsigned int i, char *c) { *c = *c - 32; }
+    char striteri_test[] = "hello";
+    ft_striteri(striteri_test, sample_func);
+    printf("ft_striteri: %s\n", striteri_test);
 
-/*     //          STRDUP             
-    res = ft_strdup("OLA MUNDO");
-    printf("\nft_strdup: %s\n", res);
+// -----------------------------------------------
 
-    //          STRJOIN             
-    joinnew = ft_strjoin(".teste", "!");
-    printf("\nft_strjoin: %s\n", joinnew); 
+    // ft_strjoin
+    printf("ft_strjoin: %s\n", ft_strjoin("Hello, ", "World!"));
 
-    //          STRLCAT             
-    atoi = ft_strlcat(teste2, str, strlen(str));
-    printf("\nft_strlcat: %d\n", atoi);
+// -----------------------------------------------
 
-    //          STRLCPY             
-    atoi = ft_strlcpy(teste2, str, strlen(str));
-    printf("\nft_strlcpy: %d\n", atoi);
+    // ft_strlcat
+    char strlcat_dest[11] = "Hello";
+    printf("ft_strlcat: %zu | %zu\n", ft_strlcat(strlcat_dest, "World", 11), strlcat(strlcat_dest, "World", 11));
 
-    //          SUBSTR            
-    res = ft_substr(str, 8, 11);
-    printf("\nft_substr: %s\n", res);
+// -----------------------------------------------
 
-    atoi = ft_strncmp("test\200", "test\0", 6);
-    printf("ft_strncmp: %i\n", atoi);
-    atoi = strncmp("test\200", "test\0", 6);
-    printf("strncmp: %i\n", atoi);
+    // ft_strlcpy
+    char strlcpy_dest[6];
+    printf("ft_strlcpy: %zu | %zu\n", ft_strlcpy(strlcpy_dest, "Hello", 6), strlcpy(strlcpy_dest, "Hello", 6));
 
- 
-    //          STRTRIM
-    printf("\ntexto antes: %s", strtrim);        
-    trim = ft_strtrim(strtrim, foundtrim);
-    printf("\nft_strtrim: %s\n", trim);
+// -----------------------------------------------
 
-    char    teste[] = "Ola cade voce?";
-    char    found[] = "cade";
-    res = ft_strnstr(teste, found, ft_strlen(teste));
-    printf("\n%s", res ); 
+    // ft_strlen
+    printf("ft_strlen: %zu | %zu\n", ft_strlen("Hello"), strlen("Hello"));
 
+// -----------------------------------------------
 
-}*/
+    // ft_strmapi
+    char strmapi_test[] = "abc";
+    char *result_mapi = ft_strmapi(strmapi_test, [](unsigned int i, char c) -> char { return c - 32; });
+    printf("ft_strmapi: %s\n", result_mapi);
+    free(result_mapi);
+
+// -----------------------------------------------
+
+    // ft_strncmp
+    printf("ft_strncmp: %d | %d\n", ft_strncmp("Hello", "Hello", 5), strncmp("Hello", "Hello", 5));
+
+// -----------------------------------------------
+
+    // ft_strnstr
+    printf("ft_strnstr: %s | %s\n", ft_strnstr("Hello World", "World", 11), strnstr("Hello World", "World", 11));
+
+// -----------------------------------------------
+
+    // ft_strrchr
+    printf("ft_strrchr: %s | %s\n", ft_strrchr("Hello", 'l'), strrchr("Hello", 'l'));
+
+// -----------------------------------------------
+
+    // ft_strtrim
+    printf("ft_strtrim: %s\n", ft_strtrim("   Hello   ", " "));
+
+// -----------------------------------------------
+
+    // ft_substr
+    printf("ft_substr: %s\n", ft_substr("Hello World", 6, 5));
+
+// -----------------------------------------------
+
+    // ft_tolower
+    printf("ft_tolower: %d | %d\n", ft_tolower('A'), tolower('A'));
+
+// -----------------------------------------------
+
+    // ft_toupper
+    printf("ft_toupper: %d | %d\n", ft_toupper('a'), toupper('a'));
+
+// -----------------------------------------------
+
+    // ft_lstnew
+    t_list *node1 = ft_lstnew("Node 1");
+    printf("ft_lstnew: %s\n", (char *)node1->content);
+
+// -----------------------------------------------
+
+    // ft_lstadd_front
+    t_list *node2 = ft_lstnew("Node 2");
+    ft_lstadd_front(&node1, node2);
+    printf("ft_lstadd_front: %s\n", (char *)node1->content);
+
+// -----------------------------------------------
+
+    // ft_lstadd_back
+    t_list *node3 = ft_lstnew("Node 3");
+    ft_lstadd_back(&node1, node3);
+    printf("ft_lstadd_back: %s\n", (char *)ft_lstlast(node1)->content);
+
+// -----------------------------------------------
+
+    // ft_lstsize
+    printf("ft_lstsize: %d\n", ft_lstsize(node1));
+
+// -----------------------------------------------
+
+    // ft_lstdelone
+    ft_lstdelone(node3, free);
+    printf("ft_lstdelone: Node 3 deleted\n");
+
+// -----------------------------------------------
+
+    // ft_lstclear
+    ft_lstclear(&node1, free);
+    printf("ft_lstclear: All nodes cleared\n");
+
+// -----------------------------------------------
+
+    return 0;
+}
